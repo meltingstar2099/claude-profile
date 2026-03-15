@@ -1,4 +1,4 @@
-# claude-profile
+# multiple-claude-profiles
 
 [中文说明](README.zh-CN.md)
 

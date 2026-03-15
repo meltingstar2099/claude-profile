@@ -1,4 +1,4 @@
-# claude-profile
+# multiple-claude-profiles
 
 [English](README.md)
 
