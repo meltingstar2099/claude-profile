@@ -30,7 +30,7 @@ Requires [Node.js](https://nodejs.org/) and [Claude Code](https://docs.anthropic
 |---------|-------------|
 | `claude-profile create <name>` | Create a blank profile from scratch |
 | `claude-profile clone <name>` | Clone `~/.claude/` into a new profile |
-| `claude-profile run <name> [args...]` | Launch Claude Code with a profile |
+| `claude-profile run <name>` | Launch Claude Code with a profile |
 | `claude-profile delete <name> [--force]` | Delete a profile |
 
 ---

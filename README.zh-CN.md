@@ -30,7 +30,7 @@ npm install -g claude-profile
 |------|------|
 | `claude-profile create <name>` | 从零创建空白 profile |
 | `claude-profile clone <name>` | 克隆 `~/.claude/` 到新 profile |
-| `claude-profile run <name> [args...]` | 用指定 profile 启动 Claude Code |
+| `claude-profile run <name>` | 用指定 profile 启动 Claude Code |
 | `claude-profile delete <name> [--force]` | 删除 profile |
 
 ---
