@@ -83,17 +83,17 @@ Use this when you want a new profile that starts as a copy of your current setup
 Launches Claude Code using the specified profile's configuration.
 
 ```bash
-claude-profile run my-profile
+claude-profile run <name>
 ```
 
-This opens an interactive Claude Code session, just like running `claude` — but it reads configuration from `~/.claude-profiles/my-profile/` instead of `~/.claude/`.
+This opens an interactive Claude Code session, just like running `claude` — but it reads configuration from `~/.claude-profiles/<name>/` instead of `~/.claude/`.
 
 You can pass any Claude Code arguments after the profile name:
 
 ```bash
-claude-profile run my-profile -p "hello"          # print mode
-claude-profile run my-profile --model opus         # use a specific model
-claude-profile run my-profile -c                   # continue last session
+claude-profile run <name> -p "hello"          # print mode
+claude-profile run <name> --model opus         # use a specific model
+claude-profile run <name> -c                   # continue last session
 ```
 
 ### `claude-profile delete <name>`
@@ -101,8 +101,8 @@ claude-profile run my-profile -c                   # continue last session
 Deletes a profile and all its contents.
 
 ```bash
-claude-profile delete my-profile           # asks for confirmation
-claude-profile delete my-profile --force   # no confirmation
+claude-profile delete <name>           # asks for confirmation
+claude-profile delete <name> --force   # no confirmation
 ```
 
 This only deletes profiles in `~/.claude-profiles/`. It will never touch your original `~/.claude/` config.
@@ -131,10 +131,10 @@ Uses two official Claude Code features:
 - **`CLAUDE_CONFIG_DIR`** environment variable — tells Claude Code to read config from a different directory instead of `~/.claude/`
 - **`--setting-sources "user,project,local"`** — prevents your original `~/.claude/` config from leaking into the profile session
 
-When you run `claude-profile run my-profile`, it's equivalent to:
+When you run `claude-profile run <name>`, it's equivalent to:
 
 ```bash
-CLAUDE_CONFIG_DIR=~/.claude-profiles/my-profile claude --setting-sources "user,project,local"
+CLAUDE_CONFIG_DIR=~/.claude-profiles/<name> claude --setting-sources "user,project,local"
 ```
 
 ## Safety

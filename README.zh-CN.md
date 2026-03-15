@@ -83,17 +83,17 @@ claude-profile clone my-fork
 使用指定 profile 的配置启动 Claude Code。
 
 ```bash
-claude-profile run my-profile
+claude-profile run <name>
 ```
 
-效果和直接运行 `claude` 一样，但配置读取自 `~/.claude-profiles/my-profile/` 而不是 `~/.claude/`。
+效果和直接运行 `claude` 一样，但配置读取自 `~/.claude-profiles/<name>/` 而不是 `~/.claude/`。
 
 可以在 profile 名后面传递任何 Claude Code 参数：
 
 ```bash
-claude-profile run my-profile -p "hello"          # 打印模式
-claude-profile run my-profile --model opus         # 指定模型
-claude-profile run my-profile -c                   # 继续上次对话
+claude-profile run <name> -p "hello"          # 打印模式
+claude-profile run <name> --model opus         # 指定模型
+claude-profile run <name> -c                   # 继续上次对话
 ```
 
 ### `claude-profile delete <name>`
@@ -101,8 +101,8 @@ claude-profile run my-profile -c                   # 继续上次对话
 删除一个 profile 及其所有内容。
 
 ```bash
-claude-profile delete my-profile           # 会要求确认
-claude-profile delete my-profile --force   # 跳过确认
+claude-profile delete <name>           # 会要求确认
+claude-profile delete <name> --force   # 跳过确认
 ```
 
 只会删除 `~/.claude-profiles/` 下的 profile，永远不会碰你的 `~/.claude/`。
@@ -131,10 +131,10 @@ claude
 - **`CLAUDE_CONFIG_DIR`** 环境变量 — 让 Claude Code 从指定目录读取配置，而不是 `~/.claude/`
 - **`--setting-sources "user,project,local"`** — 阻止原始 `~/.claude/` 的配置泄漏到 profile 会话中
 
-当你运行 `claude-profile run my-profile` 时，等价于：
+当你运行 `claude-profile run <name>` 时，等价于：
 
 ```bash
-CLAUDE_CONFIG_DIR=~/.claude-profiles/my-profile claude --setting-sources "user,project,local"
+CLAUDE_CONFIG_DIR=~/.claude-profiles/<name> claude --setting-sources "user,project,local"
 ```
 
 ## 安全性
