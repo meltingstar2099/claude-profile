@@ -17,7 +17,7 @@ Claude Code reads its configuration from `~/.claude/` — one global config for 
 ## Install
 
 ```bash
-npm install -g claude-profile
+npm install -g multiple-claude-profiles
 ```
 
 Requires [Node.js](https://nodejs.org/) and [Claude Code](https://docs.anthropic.com/en/docs/claude-code) to be installed.
