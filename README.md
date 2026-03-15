@@ -12,7 +12,7 @@ Claude Code reads its configuration from `~/.claude/` — one global config for 
 - Multiple terminals running Claude Code with completely different configurations at the same time
 - A way to experiment with new configs without touching your working setup
 
-`claude-profile` solves this. Each profile is a fully isolated Claude Code configuration. Your original `~/.claude/` is never modified.
+`claude-profile` solves this. Each profile is a fully isolated Claude Code configuration, stored in `~/.claude-profiles/<name>/`. Your original `~/.claude/` is never modified.
 
 ## Install
 
@@ -40,13 +40,13 @@ Requires [Node.js](https://nodejs.org/) and [Claude Code](https://docs.anthropic
 Creates a new blank profile from scratch. Use this when you want a clean slate with no relation to your original config.
 
 ```bash
-claude-profile create fresh-start
+claude-profile create <name>
 ```
 
-This creates `~/.claude-profiles/fresh-start/` with:
+This creates `~/.claude-profiles/<name>/` with:
 
 ```
-~/.claude-profiles/fresh-start/
+~/.claude-profiles/<name>/
   CLAUDE.md          ← empty, you fill it in
   rules/             ← empty directory
   hooks/             ← empty directory
@@ -60,7 +60,7 @@ You then edit these files to define the profile's behavior. The structure is the
 Clones your current `~/.claude/` configuration into a new profile. Use this when you want to start from your existing setup and modify it.
 
 ```bash
-claude-profile clone my-fork
+claude-profile clone <name>
 ```
 
 This copies the following from `~/.claude/` into the new profile:
@@ -73,8 +73,6 @@ This copies the following from `~/.claude/` into the new profile:
 | skills/ | downloads/ |
 | settings.json | session-env/ |
 | plugins/ | |
-
-Use this when you want a new profile that starts as a copy of your current setup, then modify it from there.
 
 **Note:** `clone` always copies from `~/.claude/` (your original config). It does not copy from one profile to another.
 
@@ -107,18 +105,24 @@ claude-profile delete <name> --force   # no confirmation
 
 This only deletes profiles in `~/.claude-profiles/`. It will never touch your original `~/.claude/` config.
 
+### List existing profiles
+
+```bash
+ls ~/.claude-profiles/
+```
+
 ## Parallel usage
 
 The main advantage: run multiple Claude Code instances with different configs at the same time.
 
 ```bash
-# Terminal 1 — profile A
+# Terminal 1
 claude-profile run profile-a
 
-# Terminal 2 — profile B
+# Terminal 2
 claude-profile run profile-b
 
-# Terminal 3 — your original ~/.claude/ config
+# Terminal 3 (original config)
 claude
 ```
 
