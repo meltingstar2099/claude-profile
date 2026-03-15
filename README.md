@@ -1,5 +1,7 @@
 # claude-profile
 
+[中文说明](README.zh-CN.md)
+
 Create and manage isolated Claude Code configuration profiles. Run different profiles in different terminals simultaneously.
 
 ## Install
