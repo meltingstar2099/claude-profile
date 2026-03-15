@@ -59,6 +59,8 @@ claude-profile create <name>
 
 克隆你当前的 `~/.claude/` 配置，生成一个副本作为新 profile。适合你想在现有配置的基础上做修改。
 
+`<name>` 是新 profile 的名字，不是你要克隆的那个配置的名字。源头始终是 `~/.claude/`。
+
 ```bash
 claude-profile clone <name>
 ```

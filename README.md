@@ -59,6 +59,8 @@ You then edit these files to define the profile's behavior. The structure is the
 
 Clones your current `~/.claude/` configuration into a new profile. Use this when you want to start from your existing setup and modify it.
 
+`<name>` is the name for the new profile, not the config you're cloning from. The source is always `~/.claude/`.
+
 ```bash
 claude-profile clone <name>
 ```
