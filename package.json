@@ -1,0 +1,23 @@
+{
+  "name": "claude-profile",
+  "version": "1.0.0",
+  "description": "Create and manage isolated Claude Code configuration profiles",
+  "bin": {
+    "claude-profile": "./bin/claude-profile.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "claude",
+    "claude-code",
+    "profile",
+    "configuration",
+    "cli"
+  ],
+  "author": "yuxian",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^14.0.3"
+  }
+}
