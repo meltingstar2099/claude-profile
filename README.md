@@ -26,16 +26,16 @@ Requires [Node.js](https://nodejs.org/) and [Claude Code](https://docs.anthropic
 
 ### `claude-profile create <name>`
 
-Creates a new blank profile with empty skeleton files.
+Creates a new blank profile from scratch. Use this when you want a clean slate with no relation to your original config.
 
 ```bash
-claude-profile create my-profile
+claude-profile create fresh-start
 ```
 
-This creates `~/.claude-profiles/my-profile/` with:
+This creates `~/.claude-profiles/fresh-start/` with:
 
 ```
-~/.claude-profiles/my-profile/
+~/.claude-profiles/fresh-start/
   CLAUDE.md          ← empty, you fill it in
   rules/             ← empty directory
   hooks/             ← empty directory
@@ -46,10 +46,10 @@ You then edit these files to define the profile's behavior. The structure is the
 
 ### `claude-profile clone <name>`
 
-Creates a new profile by copying your current `~/.claude/` configuration.
+Clones your current `~/.claude/` configuration into a new profile. Use this when you want to start from your existing setup and modify it.
 
 ```bash
-claude-profile clone my-profile
+claude-profile clone my-fork
 ```
 
 This copies the following from `~/.claude/` into the new profile:

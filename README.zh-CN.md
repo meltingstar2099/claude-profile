@@ -26,16 +26,16 @@ npm install -g claude-profile
 
 ### `claude-profile create <name>`
 
-创建一个空白 profile。
+从零开始创建一个空白 profile。适合你想要一套全新的、和原始配置完全无关的规则。
 
 ```bash
-claude-profile create my-profile
+claude-profile create fresh-start
 ```
 
 生成的目录结构：
 
 ```
-~/.claude-profiles/my-profile/
+~/.claude-profiles/fresh-start/
   CLAUDE.md          ← 空白，你自己填写
   rules/             ← 空目录
   hooks/             ← 空目录
@@ -46,10 +46,10 @@ claude-profile create my-profile
 
 ### `claude-profile clone <name>`
 
-从当前 `~/.claude/` 复制配置，创建一个新 profile。
+克隆你当前的 `~/.claude/` 配置，生成一个副本作为新 profile。适合你想在现有配置的基础上做修改。
 
 ```bash
-claude-profile clone my-profile
+claude-profile clone my-fork
 ```
 
 复制的内容：
