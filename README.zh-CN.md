@@ -24,6 +24,17 @@ npm install -g claude-profile
 
 ## 命令
 
+`<name>` 是你自己取的任意名字，只要是字母、数字、下划线、连字符就行。
+
+| 命令 | 作用 |
+|------|------|
+| `claude-profile create <name>` | 从零创建空白 profile |
+| `claude-profile clone <name>` | 克隆 `~/.claude/` 到新 profile |
+| `claude-profile run <name> [args...]` | 用指定 profile 启动 Claude Code |
+| `claude-profile delete <name> [--force]` | 删除 profile |
+
+---
+
 ### `claude-profile create <name>`
 
 从零开始创建一个空白 profile。适合你想要一套全新的、和原始配置完全无关的规则。

@@ -24,6 +24,17 @@ Requires [Node.js](https://nodejs.org/) and [Claude Code](https://docs.anthropic
 
 ## Commands
 
+`<name>` is any name you choose — letters, numbers, hyphens, and underscores only.
+
+| Command | What it does |
+|---------|-------------|
+| `claude-profile create <name>` | Create a blank profile from scratch |
+| `claude-profile clone <name>` | Clone `~/.claude/` into a new profile |
+| `claude-profile run <name> [args...]` | Launch Claude Code with a profile |
+| `claude-profile delete <name> [--force]` | Delete a profile |
+
+---
+
 ### `claude-profile create <name>`
 
 Creates a new blank profile from scratch. Use this when you want a clean slate with no relation to your original config.
