@@ -15,10 +15,10 @@ npm install -g claude-profile
 ### Create a blank profile
 
 ```bash
-claude-profile create thinking
+claude-profile create my-profile
 ```
 
-Creates `~/.claude-profiles/thinking/` with:
+Creates `~/.claude-profiles/my-profile/` with:
 - `CLAUDE.md` (empty)
 - `rules/`
 - `hooks/`
@@ -29,7 +29,7 @@ Edit these files to customize your profile.
 ### Clone your current config
 
 ```bash
-claude-profile clone coding
+claude-profile clone my-profile
 ```
 
 Copies your existing `~/.claude/` config (CLAUDE.md, rules, hooks, skills, settings.json, plugins) into a new profile.
@@ -37,7 +37,7 @@ Copies your existing `~/.claude/` config (CLAUDE.md, rules, hooks, skills, setti
 ### Run Claude Code with a profile
 
 ```bash
-claude-profile run thinking
+claude-profile run my-profile
 ```
 
 Launches Claude Code using the profile's configuration. Your original `~/.claude/` config is untouched.
@@ -45,15 +45,15 @@ Launches Claude Code using the profile's configuration. Your original `~/.claude
 Pass extra arguments to Claude Code:
 
 ```bash
-claude-profile run thinking -p "hello"
-claude-profile run thinking --model opus
+claude-profile run my-profile -p "hello"
+claude-profile run my-profile --model opus
 ```
 
 ### Delete a profile
 
 ```bash
-claude-profile delete thinking
-claude-profile delete thinking --force  # skip confirmation
+claude-profile delete my-profile
+claude-profile delete my-profile --force  # skip confirmation
 ```
 
 ## How it works
@@ -69,10 +69,10 @@ Each profile is a complete, isolated config directory. Multiple terminals can ru
 
 ```bash
 # Terminal 1
-claude-profile run thinking
+claude-profile run profile-a
 
 # Terminal 2
-claude-profile run coding
+claude-profile run profile-b
 
 # Terminal 3 (original config)
 claude

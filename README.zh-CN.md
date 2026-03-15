@@ -13,10 +13,10 @@ npm install -g claude-profile
 ### 创建空白配置
 
 ```bash
-claude-profile create thinking
+claude-profile create my-profile
 ```
 
-在 `~/.claude-profiles/thinking/` 下生成：
+在 `~/.claude-profiles/my-profile/` 下生成：
 - `CLAUDE.md`（空白）
 - `rules/`
 - `hooks/`
@@ -27,7 +27,7 @@ claude-profile create thinking
 ### 克隆当前配置
 
 ```bash
-claude-profile clone coding
+claude-profile clone my-profile
 ```
 
 将 `~/.claude/` 下的配置（CLAUDE.md、rules、hooks、skills、settings.json、plugins）复制到新 profile。
@@ -35,7 +35,7 @@ claude-profile clone coding
 ### 使用指定配置启动 Claude Code
 
 ```bash
-claude-profile run thinking
+claude-profile run my-profile
 ```
 
 以该 profile 的配置启动 Claude Code。你原来的 `~/.claude/` 不受任何影响。
@@ -43,15 +43,15 @@ claude-profile run thinking
 传递额外参数给 Claude Code：
 
 ```bash
-claude-profile run thinking -p "hello"
-claude-profile run thinking --model opus
+claude-profile run my-profile -p "hello"
+claude-profile run my-profile --model opus
 ```
 
 ### 删除配置
 
 ```bash
-claude-profile delete thinking
-claude-profile delete thinking --force  # 跳过确认
+claude-profile delete my-profile
+claude-profile delete my-profile --force  # 跳过确认
 ```
 
 ## 原理
@@ -67,10 +67,10 @@ claude-profile delete thinking --force  # 跳过确认
 
 ```bash
 # 终端 1
-claude-profile run thinking
+claude-profile run profile-a
 
 # 终端 2
-claude-profile run coding
+claude-profile run profile-b
 
 # 终端 3（原始配置）
 claude
